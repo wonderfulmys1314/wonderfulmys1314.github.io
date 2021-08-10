@@ -155,13 +155,25 @@
     <article id="post-create-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/10/create-blog/">博客创建</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/10/create-blog/" class="archive-article-date">
+  	<time datetime="2021-08-09T17:18:57.664Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-10</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="博客创建"><a href="#博客创建" class="headerlink" title="博客创建"></a>博客创建</h1><ul>
-<li><p>生成文件</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
-<li><p>上传github</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+        <h2 id="博客创建"><a href="#博客创建" class="headerlink" title="博客创建"></a>博客创建</h2><ul>
+<li>一键三连<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean &amp; hexo g &amp; sudo hexo d</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -208,9 +220,43 @@
     <article id="post-docker-init-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/09/docker-init-learning/">docker学习</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/09/docker-init-learning/" class="archive-article-date">
+  	<time datetime="2021-08-08T17:40:12.691Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-09</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Docker入门学习"><a href="#Docker入门学习" class="headerlink" title="Docker入门学习"></a>Docker入门学习</h1><h2 id="环境创建"><a href="#环境创建" class="headerlink" title="环境创建"></a>环境创建</h2>
+        <p>结合阿里天池相关课程与个人实践的学习记录</p>
+<h2 id="Docker入门学习"><a href="#Docker入门学习" class="headerlink" title="Docker入门学习"></a>Docker入门学习</h2><h3 id="理论知识"><a href="#理论知识" class="headerlink" title="理论知识"></a>理论知识</h3><ul>
+<li>基础概念<ul>
+<li>image(存储和分发)</li>
+<li>container(运行)</li>
+<li>repository(依赖)</li>
+</ul>
+</li>
+</ul>
+<h3 id="Docker实践"><a href="#Docker实践" class="headerlink" title="Docker实践"></a>Docker实践</h3><ul>
+<li>常用命令及配置<ul>
+<li><p>Dockerfile配置</p>
+</li>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># Base Images</span><br><span class="line">## 从天池基础镜像构建(from的base img 根据自己的需要更换，建议使用天池open list镜像链接：https://tianchi.aliyun.com/forum/postDetail?postId=67720)</span><br><span class="line">FROM registry.cn-shanghai.aliyuncs.com/tcc-public/python:3</span><br><span class="line">##安装依赖包</span><br><span class="line">RUN pip install numpy -i https://pypi.tuna.tsinghua.edu.cn/simple </span><br><span class="line">##或者从requirements.txt安装</span><br><span class="line">##RUN pip install --no-cache-dir -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple </span><br><span class="line">## 把当前文件夹里的文件构建到镜像的根目录下,并设置为默认工作目录</span><br><span class="line">ADD . /</span><br><span class="line">WORKDIR /</span><br><span class="line">## 镜像启动后统一执行 sh run.sh</span><br><span class="line">CMD [&quot;sh&quot;, &quot;run.sh&quot;]</span><br></pre></td></tr></table></figure></li>
+<li><p>docker命令</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># p ip和端口 8111 主机端口 80 容器端口</span><br><span class="line"># A 容器名称 B 镜像名称</span><br><span class="line">docker run -it -p 127.0.0.1:8111:80 --name A B /bin/bash</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+
       
 
       
@@ -255,9 +301,24 @@
     <article id="post-clash-for-ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/07/clash-for-ubuntu/">使用clash登录vpn</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/07/clash-for-ubuntu/" class="archive-article-date">
+  	<time datetime="2021-08-07T10:45:56.572Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-07</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="使用clash登录vpn"><a href="#使用clash登录vpn" class="headerlink" title="使用clash登录vpn"></a>使用clash登录vpn</h1><h2 id="简易配置"><a href="#简易配置" class="headerlink" title="简易配置"></a>简易配置</h2><ul>
+        <h2 id="使用clash登录vpn"><a href="#使用clash登录vpn" class="headerlink" title="使用clash登录vpn"></a>使用clash登录vpn</h2><h3 id="简易配置"><a href="#简易配置" class="headerlink" title="简易配置"></a>简易配置</h3><ul>
 <li><p>官网下载clash软件（<a target="_blank" rel="noopener" href="https://github.com/Dreamacro/clash/releases%EF%BC%89%E5%B9%B6%E8%A7%A3%E5%8E%8B">https://github.com/Dreamacro/clash/releases）并解压</a></p>
 </li>
 <li><p>创建配置文件（vpn使用的线路）</p>
@@ -281,7 +342,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li>配置链接：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/384293609">https://zhuanlan.zhihu.com/p/384293609</a></li>
 </ul>
 
